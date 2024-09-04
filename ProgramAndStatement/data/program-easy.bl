@@ -1,0 +1,19 @@
+PROGRAM easyTest IS
+
+INSTRUCTION dynamicMove IS
+        IF next-is-friend THEN
+            turnleft
+        ELSE
+            turnright
+        END IF
+END dynamicMove
+
+BEGIN
+	WHILE true DO
+        IF next-is-enemy THEN
+			infect
+		ELSE
+			dynamicMove
+		END IF
+    END WHILE
+END easyTest

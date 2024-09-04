@@ -1,0 +1,25 @@
+PROGRAM mediumTest IS
+
+INSTRUCTION dynamicMove IS
+	IF next-is-friend THEN
+		turnleft
+	ELSE
+		turnright
+	END IF
+END dynamicMove
+
+INSTRUCTION dynamicAttack IS
+    infect
+	dynamicMove
+END dynamicAttack
+
+BEGIN
+	WHILE true DO
+		IF next-is-enemy THEN
+			attack
+		ELSE
+			dynamicMove
+		END IF
+		move
+    END WHILE
+END mediumTest

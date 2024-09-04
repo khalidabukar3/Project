@@ -1,0 +1,15 @@
+move
+IF next-is-not-enemy THEN
+	turnleft
+	infect
+END IF
+WHILE true DO
+	move
+	turnleft
+END WHILE
+IF next-is-friend THEN
+	do-something
+ELSE
+	turnright
+END IF
+go-for-it

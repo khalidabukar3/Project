@@ -1,0 +1,4 @@
+IF next-is-not-enemy THEN
+	do-something
+	move
+END IF

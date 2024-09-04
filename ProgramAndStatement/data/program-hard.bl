@@ -1,0 +1,49 @@
+PROGRAM hardTest IS
+
+INSTRUCTION tryToMove IS
+    IF next-is-empty THEN
+        move
+    ELSE
+        skip
+    END IF
+END tryToMove
+
+INSTRUCTION dynamicTurn IS
+    IF next-is-enemy THEN
+        IF next-is-friend THEN
+            turnleft
+        ELSE
+            turnright
+        END IF
+    ELSE
+        skip
+    END IF
+END dynamicTurn
+
+INSTRUCTION spin IS
+    IF next-is-friend THEN
+		turnleft
+		turnleft
+		turnleft
+		turnleft
+	ELSE
+		skip
+	END IF
+END spin
+
+BEGIN
+    WHILE true DO
+        tryToMove
+        IF next-is-enemy THEN
+            dynamicTurn
+            infect
+        ELSE
+			IF next-is-wall THEN
+				dynamicTurn
+			ELSE
+				tryToMove
+			END IF
+        END IF
+		spin
+    END WHILE
+END hardTest
